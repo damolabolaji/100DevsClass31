@@ -2,7 +2,11 @@
 
 class Animal {
   constructor(name) {
-    this.name = name;
+    this._name = name;
+  }
+
+  get name() {
+    return this._name;
   }
 
   speak() {
@@ -19,9 +23,3 @@ class Dof extends Animal {
 
 const myDof = new Dof("ada", "bull");
 console.log(myDof.name);
-
-//just testing Anki
-let thisArray = [5, 4, 2, 6, 4, 5, 3, 0];
-console.log(thisArray.splice(3, 3));
-console.log(thisArray);
-console.log(thisArray.slice(3, 7));
