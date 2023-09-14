@@ -68,3 +68,16 @@ class FrontEnd extends Contractor {
   }
 }
 
+class BackEnd extends Contractor {
+  constructor(name, hourlyRate, yearsExp, hoursWorked, language) {
+    super(name, hourlyRate, yearsExp, hoursWorked);
+    this._language = language;
+  }
+
+  get language() {
+    return this._language;
+  }
+  displayLanguage() {
+    console.log(`${this.name} knows Node, Postman, Express and MongoDB`);
+  }
+}
