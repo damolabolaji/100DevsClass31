@@ -23,3 +23,33 @@ class Dof extends Animal {
 
 const myDof = new Dof("ada", "bull");
 console.log(myDof.name);
+
+//class 32
+class Contractor {
+  constructor(name, hourlyRate, yearsExp, hoursWorked) {
+    this._name = name;
+    this._hourlyRate = hourlyRate;
+    this._yearsExp = yearsExp;
+    this._hoursWorked = hoursWorked;
+  }
+
+  get name() {
+    return this._name;
+  }
+  get hourlyRate() {
+    return this._hourlyRate;
+  }
+  get yearsExp() {
+    return this._yearsExp;
+  }
+  get hoursWorked() {
+    return this._hoursWorked;
+  }
+
+  calculateProfit() {
+    return this._hourlyRate * this._hoursWorked;
+  }
+  displayProfit() {
+    console.log(`${this.name} has earned ${this.calculateProfit()} `);
+  }
+}
