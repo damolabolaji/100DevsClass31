@@ -53,3 +53,18 @@ class Contractor {
     console.log(`${this.name} has earned ${this.calculateProfit()} `);
   }
 }
+
+class FrontEnd extends Contractor {
+  constructor(name, hourlyRate, yearsExp, hoursWorked, language) {
+    super(name, hourlyRate, yearsExp, hoursWorked);
+    this._language = language;
+  }
+
+  get language() {
+    return this._language;
+  }
+  displayLanguage() {
+    console.log(`${this.name} knows CSS, HTML, GSAP`);
+  }
+}
+
