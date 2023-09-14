@@ -50,7 +50,7 @@ class Contractor {
     return this._hourlyRate * this._hoursWorked;
   }
   displayProfit() {
-    console.log(`${this.name} has earned ${this.calculateProfit()} `);
+    return `${this.name} has earned ${this.calculateProfit()} `;
   }
 }
 
@@ -65,6 +65,12 @@ class FrontEnd extends Contractor {
   }
   displayLanguage() {
     console.log(`${this.name} knows CSS, HTML, GSAP`);
+  }
+
+  displayProfit() {
+    return `${
+      this.name
+    } will have earned ${this.calculateProfit()}  at the end of task`;
   }
 }
 
@@ -81,3 +87,5 @@ class BackEnd extends Contractor {
     console.log(`${this.name} knows Node, Postman, Express and MongoDB`);
   }
 }
+
+const modBot = new Contractor("Margo", 23, 15, 200, "Frontend");
