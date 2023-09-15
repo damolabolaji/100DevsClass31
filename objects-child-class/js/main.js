@@ -52,6 +52,9 @@ class Contractor {
   displayProfit() {
     return `${this.name} has earned ${this.calculateProfit()} `;
   }
+  displayLanguage() {
+    console.log(`${this.name} `);
+  }
 }
 
 class FrontEnd extends Contractor {
@@ -63,14 +66,18 @@ class FrontEnd extends Contractor {
   get language() {
     return this._language;
   }
-  displayLanguage() {
-    console.log(`${this.name} knows CSS, HTML, GSAP`);
-  }
+  // displayLanguage() {
+  //   console.log(`${this.name} knows CSS, HTML, GSAP`);
+  // }
 
   displayProfit() {
     return `${
       this.name
     } will have earned ${this.calculateProfit()}  at the end of task`;
+  }
+  displayLanguage() {
+    super.displayLanguage();
+    console.log(`${this.name} knows knows CSS, HTML, GSAP`);
   }
 }
 
@@ -84,8 +91,17 @@ class BackEnd extends Contractor {
     return this._language;
   }
   displayLanguage() {
+    super.displayLanguage();
     console.log(`${this.name} knows Node, Postman, Express and MongoDB`);
   }
 }
 
-const modBot = new Contractor("Margo", 23, 15, 200, "Frontend");
+const modBot = new BackEnd("Margo", 23, 15, 200, "Frontend");
+const terryYaki = new FrontEnd("Terry", 15, 10, "Frontend");
+const evaDraw = new FrontEnd("Eva", 45, 23, "frontend");
+
+const people = [modBot, terryYaki, evaDraw];
+
+for (these of people) {
+  these.displayLanguage();
+}
